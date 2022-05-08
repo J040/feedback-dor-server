@@ -20,6 +20,6 @@ app.use(cors()); //aberto
 app.use(express.json()); //middleware para ler requisições em JSON
 app.use(routes);
 
-app.listen(PORT, () => {
-  console.log(`HTTP server running on port ${PORT} :)`);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`HTTP server running on port ${process.env.PORT ? process.env.PORT : PORT} :)`);
 });
